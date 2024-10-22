@@ -16,6 +16,7 @@ HAVING (CASE WHEN year = '2002' OR year = '2003' THEN CAST(WAR AS FLOAT) ELSE 0 
    OR SUM(CASE WHEN year = '2002' OR year = '2003' THEN CAST(WAR AS FLOAT) ELSE 0 END) > 5
 ORDER BY combined_WAR DESC;
 
+
 # Problem 2
 .output problem2.csv
 SELECT playerID,
@@ -36,6 +37,8 @@ SELECT
     SUM(CASE WHEN STRIKES = '2' AND BALLS = '1' THEN 1 ELSE 0 END) AS count_1_2,
     SUM(CASE WHEN STRIKES = '2' AND BALLS = '2' THEN 1 ELSE 0 END) AS count_2_2
 FROM PITCHBYPITCH
+
+#
 WHERE PitcherName = 'Jackson, Luke'
   AND STRIKES = '2'  
   AND IS_STRIKEOUT = '0';  
